@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hemantha Valathuru — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #12151a;
+    --panel: #1a1f27;
+    --line: #2b323c;
+    --text: #ede9df;
+    --muted: #9aa2ae;
+    --gold: #d9a441;
+    --teal: #6ba39a;
+    --max: 68rem;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--ink);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+  ::selection{ background: var(--gold); color: var(--ink); }
+  :focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  h1, h2, h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.75rem;
+  }
+
+  /* ---------- header ---------- */
+
+  header{
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(18,21,26,0.92);
+    backdrop-filter: blur(6px);
+    z-index: 10;
+  }
+
+  header .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .brand{
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+  }
+
+  nav{
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.87rem;
+    flex-wrap: wrap;
+  }
+
+  nav a{
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.15s ease;
+  }
+
+  nav a:hover{ color: var(--text); }
+
+  /* ---------- home / about ---------- */
+
+  .hero{
+    padding: 5.5rem 0 4.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .about-grid{
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .photo-frame{
+    width: 11rem;
+    height: 11rem;
+    border: 1px dashed var(--line);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .photo-frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .badge{
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.76rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .about-text h1{
+    font-size: clamp(2rem, 4.2vw, 3rem);
+  }
+
+  .role-line{
+    margin-top: 0.6rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--gold);
+    min-height: 1.6rem;
+  }
+
+  .role-line .cursor{
+    display: inline-block;
+    width: 2px;
+    background: var(--gold);
+    margin-left: 2px;
+    animation: blink 0.9s step-end infinite;
+  }
+
+  @keyframes blink{
+    50% { opacity: 0; }
+  }
+
+  .about-text p{
+    margin-top: 1.25rem;
+    max-width: 58ch;
+    color: var(--muted);
+    font-size: 1.03rem;
+  }
+
+  .hero-actions{
+    margin-top: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 640px){
+    .about-grid{
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
+    .about-text p{ margin-left: auto; margin-right: auto; }
+    .hero-actions{ justify-content: center; }
+  }
+
+  /* ---------- section headings ---------- */
+
+  section{
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section > .wrap > h2{
+    font-size: 1.6rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .subcat{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .subcat-num{
+    color: var(--muted);
+    margin-right: 0.6rem;
+  }
+
+  .subcat + .subcat{ margin-top: 2.25rem; }
+
+  /* ---------- tool / logo grid (skills) ---------- */
+
+  .tool-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+    gap: 0.9rem;
+  }
+
+  .tool{
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    transition: border-color 0.15s ease;
+  }
+
+  .tool:hover{ border-color: var(--gold); }
+
+  .tool img{
+    width: 1.4rem;
+    height: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .tool span{ font-size: 0.88rem; }
+
+  .chip-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .chip{
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--line);
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ---------- projects ---------- */
+
+  .project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: 1.75rem;
+  }
+
+  .project-card{
+    border: 1px solid var(--line);
+    background: var(--panel);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-thumb{
+    aspect-ratio: 16 / 9;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    background:
+      repeating-linear-gradient(135deg, rgba(217,164,65,0.05) 0 12px, transparent 12px 24px);
+  }
+
+  .project-body{
+    padding: 1.25rem 1.35rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    flex: 1;
+  }
+
+  .project-body h3{ font-size: 1.1rem; }
+
+  .project-category{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .project-body p{
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .project-links{
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+  }
+
+  .project-links a{
+    text-decoration: none;
+    color: var(--teal);
+    border-bottom: 1px solid transparent;
+  }
+
+  .project-links a:hover{ border-bottom-color: var(--teal); }
+
+  /* ---------- certifications ---------- */
+
+  .cert-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .cert{
+    border: 1px solid var(--line);
+    background: var(--panel);
+  }
+
+  .cert-thumb{
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .cert-thumb img{
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 2.85;
+    object-fit: cover;
+  }
+
+  .cert-overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(18,21,26,0.94);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .cert:hover .cert-overlay,
+  .cert:focus-within .cert-overlay{ opacity: 1; }
+
+  .cert-overlay .cert-date{
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--gold);
+    font-size: 0.85rem;
+  }
+
+  .cert-overlay a{
+    font-size: 0.82rem;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--text);
+    padding: 0.45rem 0.9rem;
+  }
+
+  .cert-overlay a:hover{ background: var(--text); color: var(--ink); }
+
+  .cert-body{ padding: 1rem 1.1rem 1.15rem; }
+  .cert-body h3{ font-size: 0.98rem; margin-bottom: 0.4rem; }
+  .cert-body p{ margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
+  .cert-meta{ font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--gold); }
+
+  /* ---------- achievements ---------- */
+
+  .achievement{
+    display: flex;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1rem 0;
+  }
+
+  .achievement + .achievement{ border-top: 1px solid var(--line); }
+
+  .achievement .year{
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--gold);
+    font-size: 0.85rem;
+    flex: 0 0 4.5rem;
+  }
+
+  .achievement p{ margin: 0; color: var(--muted); font-size: 0.98rem; }
+  .achievement strong{ color: var(--text); font-weight: 500; }
+
+  /* ---------- resume ---------- */
+
+  .resume-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 1.5rem 1.75rem;
+  }
+
+  .resume-box h3{ font-size: 1.1rem; margin-bottom: 0.4rem; }
+  .resume-box p{ margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+  .resume-actions{ display: flex; gap: 0.75rem; flex-shrink: 0; }
+
+  .btn{
+    padding: 0.75rem 1.3rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.87rem;
+    font-family: 'IBM Plex Mono', monospace;
+    background: none;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .btn:hover{ background: var(--gold); color: var(--ink); }
+
+  .btn.ghost{ border-color: var(--line); color: var(--muted); }
+  .btn.ghost:hover{ background: var(--panel); color: var(--text); border-color: var(--text); }
+
+  /* ---------- contact ---------- */
+
+  #contact{ border-bottom: none; padding-bottom: 3rem; }
+
+  .contact-grid{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .msg-form{ display: flex; flex-direction: column; gap: 0.9rem; }
+
+  .msg-form input,
+  .msg-form textarea{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.92rem;
+    padding: 0.75rem 0.9rem;
+    resize: vertical;
+  }
+
+  .msg-form textarea{ min-height: 7rem; }
+
+  .msg-form input:focus,
+  .msg-form textarea:focus{ outline: none; border-color: var(--gold); }
+
+  .msg-form button{ align-self: flex-start; }
+
+  .contact-list{ display: flex; flex-direction: column; gap: 0; }
+
+  .contact-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--line);
+    text-decoration: none;
+  }
+
+  .contact-row:last-child{ border-bottom: 1px solid var(--line); }
+
+  .contact-row span:first-child{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .contact-row span:last-child{ font-size: 0.98rem; transition: color 0.15s ease; }
+  .contact-row:hover span:last-child{ color: var(--gold); }
+
+  @media (max-width: 700px){
+    .contact-grid{ grid-template-columns: 1fr; }
+  }
+
+  footer{ padding: 2rem 0 3rem; color: var(--muted); font-size: 0.85rem; }
+
+  /* ---------- floating widgets ---------- */
+
+  .fab{
+    position: fixed;
+    right: 1.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    z-index: 20;
+  }
+
+  .fab-whatsapp{
+    bottom: 1.5rem;
+    background: #25D366;
+  }
+
+  .fab-whatsapp img{ width: 1.6rem; height: 1.6rem; }
+
+  .fab-chat{
+    bottom: 5.5rem;
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  .fab-chat svg{ width: 1.5rem; height: 1.5rem; }
+
+  .chat-panel{
+    position: fixed;
+    bottom: 9.5rem;
+    right: 1.5rem;
+    width: 20rem;
+    max-width: calc(100vw - 3rem);
+    max-height: 26rem;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+  }
+
+  .chat-panel[hidden]{ display: none; }
+
+  .chat-header{
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--line);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--gold);
+  }
+
+  .chat-messages{
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-size: 0.87rem;
+  }
+
+  .chat-msg{ max-width: 88%; padding: 0.5rem 0.7rem; }
+  .chat-msg.bot{ background: var(--ink); border: 1px solid var(--line); align-self: flex-start; }
+  .chat-msg.user{ background: var(--gold); color: var(--ink); align-self: flex-end; }
+
+  .chat-form{
+    display: flex;
+    border-top: 1px solid var(--line);
+  }
+
+  .chat-form input{
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text);
+    padding: 0.75rem 0.9rem;
+    font-size: 0.87rem;
+  }
+
+  .chat-form input:focus{ outline: none; }
+
+  .chat-form button{
+    background: none;
+    border: none;
+    color: var(--gold);
+    padding: 0 1rem;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    .role-line .cursor{ animation: none; }
+  }
+
+  @media (max-width: 640px){
+    .project-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Hemantha</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <div class="photo-frame"><span>Your photo</span></div>
+    </div>
+    <div class="about-text">
+      <div class="badge">Open to Software Engineering &amp; Data Science opportunities</div>
+      <h1>Hemantha Valathuru</h1>
+      <div class="role-line"><span id="role-text"></span><span class="cursor">&nbsp;</span></div>
+      <p>B.Tech Computer Science student specializing in Data Science and Machine Learning. I'm drawn to working with data to uncover insights and build intelligent systems — with hands-on experience across data analysis, machine learning, LLMs, RAG, and Agentic AI. I like using technology to solve real problems.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn ghost" href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/hemantha-valathuru/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="assets/resume/Hemantha_Valathuru_Resume.pdf" download>Download Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+
+    <div class="subcat"><span class="subcat-num">01</span>Languages</div>
+    <div class="tool-grid">
+      <div class="tool"><img src="https://cdn.simpleicons.org/python/9aa2ae" alt="Python logo" loading="lazy"><span>Python</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/mysql/9aa2ae" alt="SQL logo" loading="lazy"><span>SQL</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/openjdk/9aa2ae" alt="Java logo" loading="lazy"><span>Java</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/html5/9aa2ae" alt="HTML logo" loading="lazy"><span>HTML</span></div>
+    </div>
+
+    <div class="subcat"><span class="subcat-num">02</span>Data &amp; visualization</div>
+    <div class="tool-grid">
+      <div class="tool"><img src="https://cdn.simpleicons.org/tableau/9aa2ae" alt="Tableau logo" loading="lazy"><span>Tableau</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/microsoftsqlserver/9aa2ae" alt="MS SQL Server logo" loading="lazy"><span>MS SQL Server</span></div>
+    </div>
+
+    <div class="subcat"><span class="subcat-num">03</span>Dev environments</div>
+    <div class="tool-grid">
+      <div class="tool"><img src="https://cdn.simpleicons.org/visualstudio/9aa2ae" alt="Visual Studio logo" loading="lazy"><span>Visual Studio</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/jupyter/9aa2ae" alt="Jupyter logo" loading="lazy"><span>Jupyter Notebook</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/pycharm/9aa2ae" alt="PyCharm logo" loading="lazy"><span>PyCharm</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/git/9aa2ae" alt="Git logo" loading="lazy"><span>Git</span></div>
+    </div>
+
+    <div class="subcat"><span class="subcat-num">04</span>AI / ML frameworks</div>
+    <div class="tool-grid">
+      <div class="tool"><img src="https://cdn.simpleicons.org/scikitlearn/9aa2ae" alt="scikit-learn logo" loading="lazy"><span>scikit-learn</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/streamlit/9aa2ae" alt="Streamlit logo" loading="lazy"><span>Streamlit</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/huggingface/9aa2ae" alt="HuggingFace logo" loading="lazy"><span>HuggingFace</span></div>
+    </div>
+
+    <div class="subcat"><span class="subcat-num">05</span>Soft skills</div>
+    <div class="chip-row">
+      <span class="chip">Communication</span>
+      <span class="chip">Team player</span>
+      <span class="chip">Adaptability</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="project-thumb"><span>Add project image</span></div>
+        <div class="project-body">
+          <div class="project-category">Data Analysis / ML</div>
+          <h3>Do buzzword skills really pay more?</h3>
+          <p>Tested whether AI/ML/Cloud skills carry a real salary premium over traditional ones across 97,929 Indian job postings, controlling for experience, location, and rating. Built Random Forest and regression models and visualized results in Tableau.</p>
+          <div class="chip-row">
+            <span class="chip">Python</span><span class="chip">Random Forest</span><span class="chip">Regression</span><span class="chip">Tableau</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">Live</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><span>Add project image</span></div>
+        <div class="project-body">
+          <div class="project-category">AI / RAG Assistant</div>
+          <h3>CodebaseQ&amp;A</h3>
+          <p>A RAG-based assistant that answers natural-language questions about any GitHub codebase. Owned the frontend, repo-cloning workflow, and chunking pipeline feeding the vector store.</p>
+          <div class="chip-row">
+            <span class="chip">Python</span><span class="chip">RAG</span><span class="chip">FAISS</span><span class="chip">Groq</span><span class="chip">Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">Live</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><span>Add project image</span></div>
+        <div class="project-body">
+          <div class="project-category">Data Analytics / Dashboard</div>
+          <h3>Smart Expense Tracker with Analytics</h3>
+          <p>A Streamlit expense tracker with interactive dashboards, habit scoring, and recurring-subscription detection. Predicts future spending with a scikit-learn linear regression model.</p>
+          <div class="chip-row">
+            <span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">Pandas</span><span class="chip">scikit-learn</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">Live</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb"><span>Add project image</span></div>
+        <div class="project-body">
+          <div class="project-category">Systems / Algorithms</div>
+          <h3>Full Mesh Topology using Graph &amp; BFS</h3>
+          <p>A full-mesh network topology in Java using graphs and adjacency lists. BFS-based connectivity testing verifies reachability, with IP validation keeping configurations valid.</p>
+          <div class="chip-row">
+            <span class="chip">Java</span><span class="chip">Graph</span><span class="chip">BFS</span><span class="chip">HashMap</span><span class="chip">LinkedList</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">Live</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <h2>Certifications</h2>
+    <div class="cert-grid">
+
+      <div class="cert" tabindex="0">
+        <div class="cert-thumb">
+          <img src="assets/certs/ai_llm_agentic.png" alt="AI Engineer Launchpad certificate" loading="lazy">
+          <div class="cert-overlay">
+            <span class="cert-date">Jul 2026</span>
+            <a href="assets/certs/ai_llm_agentic.png" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+        </div>
+        <div class="cert-body">
+          <h3>AI Engineer Launchpad: Mastering LLMs &amp; Agentic AI</h3>
+          <p>Hands-on training in LLMs, prompt engineering, RAG, and multi-agent systems, capped with a capstone project.</p>
+          <div class="cert-meta">LPU Centre for Professional Enhancement — Grade A</div>
+        </div>
+      </div>
+
+      <div class="cert" tabindex="0">
+        <div class="cert-thumb">
+          <img src="assets/certs/coursera_digital.png" alt="Digital Systems certificate" loading="lazy">
+          <div class="cert-overlay">
+            <span class="cert-date">Sep 2025</span>
+            <a href="assets/certs/coursera_digital.png" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+        </div>
+        <div class="cert-body">
+          <h3>Digital Systems: From Logic Gates to Processors</h3>
+          <p>Digital logic fundamentals through processor design, from Universitat Aut&ograve;noma de Barcelona.</p>
+          <div class="cert-meta">Coursera</div>
+        </div>
+      </div>
+
+      <div class="cert" tabindex="0">
+        <div class="cert-thumb">
+          <img src="assets/certs/excel_tableau.png" alt="Data Management certificate" loading="lazy">
+          <div class="cert-overlay">
+            <span class="cert-date">Mar 2025</span>
+            <a href="assets/certs/excel_tableau.png" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+        </div>
+        <div class="cert-body">
+          <h3>Data Management (Excel &amp; Tableau)</h3>
+          <p>15+ hour course on data management using Excel and Tableau, completed with a proctored exam.</p>
+          <div class="cert-meta">Tech Veda</div>
+        </div>
+      </div>
+
+      <div class="cert" tabindex="0">
+        <div class="cert-thumb">
+          <img src="assets/certs/dsa.jpeg" alt="Introduction to DSA certificate" loading="lazy">
+          <div class="cert-overlay">
+            <span class="cert-date">Jan 2025</span>
+            <a href="assets/certs/dsa.jpeg" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+        </div>
+        <div class="cert-body">
+          <h3>Introduction to DSA</h3>
+          <p>Core data structures and algorithms course, completed with a proctored exam.</p>
+          <div class="cert-meta">Coding Tantra</div>
+        </div>
+      </div>
+
+      <div class="cert" tabindex="0">
+        <div class="cert-thumb">
+          <img src="assets/certs/leadership.png" alt="Leadership Fundamentals certificate" loading="lazy">
+          <div class="cert-overlay">
+            <span class="cert-date">Oct 2024</span>
+            <a href="assets/certs/leadership.png" target="_blank" rel="noopener">View Certificate</a>
+          </div>
+        </div>
+        <div class="cert-body">
+          <h3>Leadership Fundamentals</h3>
+          <p>Short course on leadership fundamentals, completed with a proctored exam.</p>
+          <div class="cert-meta">Skillera</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <h2>Achievements</h2>
+    <div class="achievement">
+      <span class="year">2024</span>
+      <p><strong>Top 30 finish, CodeXtreme 2.0 — Neo Codeathon</strong> — a coding competition held at Lovely Professional University.</p>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="wrap">
+    <h2>Resume</h2>
+    <div class="resume-box">
+      <div>
+        <h3>Hemantha Valathuru — Resume</h3>
+        <p>Full CV with skills, projects, training, and education in one PDF.</p>
+      </div>
+      <div class="resume-actions">
+        <a class="btn" href="assets/resume/Hemantha_Valathuru_Resume.pdf" target="_blank" rel="noopener">View</a>
+        <a class="btn ghost" href="assets/resume/Hemantha_Valathuru_Resume.pdf" download>Download</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <form class="msg-form" id="contact-form">
+        <input type="text" id="cf-name" placeholder="Your name" required>
+        <input type="email" id="cf-email" placeholder="Your email" required>
+        <textarea id="cf-message" placeholder="Your message" required></textarea>
+        <button type="submit" class="btn">Send message</button>
+      </form>
+      <div class="contact-list">
+        <a class="contact-row" href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">
+          <span>GitHub</span><span>github.com/HemanthaValathuru</span>
+        </a>
+        <a class="contact-row" href="https://www.linkedin.com/in/hemantha-valathuru/" target="_blank" rel="noopener">
+          <span>LinkedIn</span><span>linkedin.com/in/hemantha-valathuru</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">B.Tech student, Lovely Professional University</div>
+</footer>
+
+<a class="fab fab-whatsapp" href="https://wa.me/917018416120" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="WhatsApp">
+</a>
+
+<button class="fab fab-chat" id="chat-toggle" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+</button>
+
+<div class="chat-panel" id="chat-panel" hidden>
+  <div class="chat-header">Ask about my work</div>
+  <div class="chat-messages" id="chat-messages">
+    <div class="chat-msg bot">Hi! Ask me about my skills, projects, certificates, or resume.</div>
+  </div>
+  <form class="chat-form" id="chat-form">
+    <input type="text" id="chat-input" placeholder="Type a question..." autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+  // Rotating role typewriter
+  (function(){
+    var roles = ["Data Scientist", "Software Developer", "AI Engineer"];
+    var el = document.getElementById('role-text');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion) {
+      el.textContent = roles[0];
+      return;
+    }
+
+    var roleIndex = 0, charIndex = 0, typing = true;
+
+    function tick(){
+      var current = roles[roleIndex];
+      if (typing) {
+        charIndex++;
+        el.textContent = current.slice(0, charIndex);
+        if (charIndex === current.length) {
+          typing = false;
+          setTimeout(tick, 1400);
+          return;
+        }
+        setTimeout(tick, 55);
+      } else {
+        charIndex--;
+        el.textContent = current.slice(0, charIndex);
+        if (charIndex === 0) {
+          typing = true;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(tick, 300);
+          return;
+        }
+        setTimeout(tick, 30);
+      }
+    }
+    tick();
+  })();
+
+  // Contact form -> mailto
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value;
+    var email = document.getElementById('cf-email').value;
+    var message = document.getElementById('cf-message').value;
+    var subject = encodeURIComponent('Portfolio contact from ' + name);
+    var body = encodeURIComponent(message + '\n\nReply to: ' + email);
+    window.location.href = 'mailto:everest.hemu@gmail.com?subject=' + subject + '&body=' + body;
+  });
+
+  // Chatbot: simple rule-based FAQ, no external API
+  (function(){
+    var toggle = document.getElementById('chat-toggle');
+    var panel = document.getElementById('chat-panel');
+    var form = document.getElementById('chat-form');
+    var input = document.getElementById('chat-input');
+    var messages = document.getElementById('chat-messages');
+
+    toggle.addEventListener('click', function(){
+      panel.hidden = !panel.hidden;
+      if (!panel.hidden) input.focus();
+    });
+
+    function addMsg(text, who){
+      var div = document.createElement('div');
+      div.className = 'chat-msg ' + who;
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function reply(q){
+      q = q.toLowerCase();
+      if (q.indexOf('skill') > -1) return "I work with Python, SQL, Java, and HTML, plus Tableau, scikit-learn, Streamlit, and HuggingFace tools. See the Skills section for the full breakdown.";
+      if (q.indexOf('project') > -1) return "I've built a job-market salary analysis, a RAG-based codebase assistant, an expense tracker, and a network topology simulator. Check the Projects section for details.";
+      if (q.indexOf('resume') > -1 || q.indexOf('cv') > -1) return "You can view or download my resume in the Resume section above.";
+      if (q.indexOf('certificat') > -1) return "I've completed certifications in AI/LLMs, digital systems, data management, DSA, and leadership. See the Certifications section.";
+      if (q.indexOf('contact') > -1 || q.indexOf('email') > -1 || q.indexOf('reach') > -1) return "You can reach me via the contact form above, or on GitHub and LinkedIn — links are in the Contact section.";
+      if (q.indexOf('hi') > -1 || q.indexOf('hello') > -1) return "Hey! Ask me about my skills, projects, certificates, or resume.";
+      return "I'm a simple assistant — try asking about my skills, projects, certificates, or resume.";
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var q = input.value.trim();
+      if (!q) return;
+      addMsg(q, 'user');
+      input.value = '';
+      setTimeout(function(){ addMsg(reply(q), 'bot'); }, 300);
+    });
+  })();
+</script>
+
+</body>
+</html>
