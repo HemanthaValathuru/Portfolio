@@ -276,6 +276,14 @@
     font-size: 0.78rem;
     background:
       repeating-linear-gradient(135deg, rgba(217,164,65,0.05) 0 12px, transparent 12px 24px);
+    overflow: hidden;
+  }
+
+  .project-thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .project-body{
@@ -621,7 +629,9 @@
 <section class="hero" id="home">
   <div class="wrap about-grid">
     <div class="about-photo">
-      <div class="photo-frame"><span>Your photo</span></div>
+      <div class="photo-frame">
+        <img src="assets/profile/hemantha.jpg" alt="Hemantha Valathuru" loading="lazy">
+      </div>
     </div>
     <div class="about-text">
       <div class="badge">Open to Software Engineering &amp; Data Science opportunities</div>
@@ -644,31 +654,31 @@
 
     <div class="subcat"><span class="subcat-num">01</span>Languages</div>
     <div class="tool-grid">
-      <div class="tool"><img src="https://cdn.simpleicons.org/python/9aa2ae" alt="Python logo" loading="lazy"><span>Python</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/mysql/9aa2ae" alt="SQL logo" loading="lazy"><span>SQL</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/openjdk/9aa2ae" alt="Java logo" loading="lazy"><span>Java</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/html5/9aa2ae" alt="HTML logo" loading="lazy"><span>HTML</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/python/9aa2ae" alt="Python logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>Python</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/mysql/9aa2ae" alt="SQL logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>SQL</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/openjdk/9aa2ae" alt="Java logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>Java</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/html5/9aa2ae" alt="HTML logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>HTML</span></div>
     </div>
 
     <div class="subcat"><span class="subcat-num">02</span>Data &amp; visualization</div>
     <div class="tool-grid">
-      <div class="tool"><img src="https://cdn.simpleicons.org/tableau/9aa2ae" alt="Tableau logo" loading="lazy"><span>Tableau</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/microsoftsqlserver/9aa2ae" alt="MS SQL Server logo" loading="lazy"><span>MS SQL Server</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/tableau/9aa2ae" alt="Tableau logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>Tableau</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/microsoftsqlserver/9aa2ae" alt="MS SQL Server logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>MS SQL Server</span></div>
     </div>
 
     <div class="subcat"><span class="subcat-num">03</span>Dev environments</div>
     <div class="tool-grid">
-      <div class="tool"><img src="https://cdn.simpleicons.org/visualstudio/9aa2ae" alt="Visual Studio logo" loading="lazy"><span>Visual Studio</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/jupyter/9aa2ae" alt="Jupyter logo" loading="lazy"><span>Jupyter Notebook</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/pycharm/9aa2ae" alt="PyCharm logo" loading="lazy"><span>PyCharm</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/git/9aa2ae" alt="Git logo" loading="lazy"><span>Git</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/visualstudio/9aa2ae" alt="Visual Studio logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>Visual Studio</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/jupyter/9aa2ae" alt="Jupyter logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>Jupyter Notebook</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/pycharm/9aa2ae" alt="PyCharm logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>PyCharm</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/git/9aa2ae" alt="Git logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>Git</span></div>
     </div>
 
     <div class="subcat"><span class="subcat-num">04</span>AI / ML frameworks</div>
     <div class="tool-grid">
-      <div class="tool"><img src="https://cdn.simpleicons.org/scikitlearn/9aa2ae" alt="scikit-learn logo" loading="lazy"><span>scikit-learn</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/streamlit/9aa2ae" alt="Streamlit logo" loading="lazy"><span>Streamlit</span></div>
-      <div class="tool"><img src="https://cdn.simpleicons.org/huggingface/9aa2ae" alt="HuggingFace logo" loading="lazy"><span>HuggingFace</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/scikitlearn/9aa2ae" alt="scikit-learn logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>scikit-learn</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/streamlit/9aa2ae" alt="Streamlit logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>Streamlit</span></div>
+      <div class="tool"><img src="https://cdn.simpleicons.org/huggingface/9aa2ae" alt="HuggingFace logo" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace(/\/[0-9a-fA-F]{6}$/,'')"><span>HuggingFace</span></div>
     </div>
 
     <div class="subcat"><span class="subcat-num">05</span>Soft skills</div>
@@ -676,6 +686,8 @@
       <span class="chip">Communication</span>
       <span class="chip">Team player</span>
       <span class="chip">Adaptability</span>
+      <span class="chip">Problem solving</span>
+      <span class="chip">Leadership</span>
     </div>
   </div>
 </section>
@@ -686,7 +698,9 @@
     <div class="project-grid">
 
       <div class="project-card">
-        <div class="project-thumb"><span>Add project image</span></div>
+        <div class="project-thumb">
+          <img src="assets/projects/buzzword-job-market.jpg" alt="Do buzzword skills really pay more project screenshot" loading="lazy">
+        </div>
         <div class="project-body">
           <div class="project-category">Data Analysis / ML</div>
           <h3>Do buzzword skills really pay more?</h3>
@@ -696,13 +710,14 @@
           </div>
           <div class="project-links">
             <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">Live</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-thumb"><span>Add project image</span></div>
+        <div class="project-thumb">
+          <img src="assets/projects/codebaseqna.jpg" alt="CodebaseQ&A project screenshot" loading="lazy">
+        </div>
         <div class="project-body">
           <div class="project-category">AI / RAG Assistant</div>
           <h3>CodebaseQ&amp;A</h3>
@@ -711,14 +726,16 @@
             <span class="chip">Python</span><span class="chip">RAG</span><span class="chip">FAISS</span><span class="chip">Groq</span><span class="chip">Streamlit</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">Live</a>
+            <a href="https://github.com/HemanthaValathuru/CodebaseQnA" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://askyourrepository.streamlit.app/" target="_blank" rel="noopener">Live</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-thumb"><span>Add project image</span></div>
+        <div class="project-thumb">
+          <img src="assets/projects/expense-tracker.jpg" alt="Smart Expense Tracker project screenshot" loading="lazy">
+        </div>
         <div class="project-body">
           <div class="project-category">Data Analytics / Dashboard</div>
           <h3>Smart Expense Tracker with Analytics</h3>
@@ -727,14 +744,15 @@
             <span class="chip">Python</span><span class="chip">Streamlit</span><span class="chip">Pandas</span><span class="chip">scikit-learn</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">Live</a>
+            <a href="https://github.com/HemanthaValathuru/Smart-Expense-Tracker" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-thumb"><span>Add project image</span></div>
+        <div class="project-thumb">
+          <img src="assets/projects/mesh-topology.jpg" alt="Full Mesh Topology project screenshot" loading="lazy">
+        </div>
         <div class="project-body">
           <div class="project-category">Systems / Algorithms</div>
           <h3>Full Mesh Topology using Graph &amp; BFS</h3>
@@ -743,8 +761,7 @@
             <span class="chip">Java</span><span class="chip">Graph</span><span class="chip">BFS</span><span class="chip">HashMap</span><span class="chip">LinkedList</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://github.com/HemanthaValathuru" target="_blank" rel="noopener">Live</a>
+            <a href="https://github.com/HemanthaValathuru/Full-Mesh-Topology-DSA" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
