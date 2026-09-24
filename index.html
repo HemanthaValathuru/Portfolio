@@ -131,7 +131,9 @@
   }
 
   .badge{
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.4rem 0.9rem;
     border: 1px solid var(--gold);
     color: var(--gold);
@@ -139,6 +141,19 @@
     font-size: 0.76rem;
     margin-bottom: 1.1rem;
     box-shadow: 0 0 0 1px rgba(234,182,84,0.08), 0 0 22px -6px rgba(234,182,84,0.55);
+  }
+
+  .badge .dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot{
+    0%, 100%{ opacity: 1; box-shadow: 0 0 0 0 rgba(234,182,84,0.5); }
+    50%{ opacity: 0.6; box-shadow: 0 0 0 4px rgba(234,182,84,0); }
   }
 
   .about-text h1{
@@ -182,6 +197,91 @@
     flex-wrap: wrap;
     gap: 0.75rem;
   }
+
+  .stat-bar{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-top: 3rem;
+  }
+
+  .stat{
+    background: var(--panel);
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+
+  .stat .num{
+    font-family: 'Fraunces', serif;
+    font-size: 1.7rem;
+    color: var(--gold);
+  }
+
+  .stat .label{
+    margin-top: 0.3rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 640px){
+    .stat-bar{ grid-template-columns: 1fr; }
+  }
+
+  .about-columns{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  @media (max-width: 700px){
+    .about-columns{ grid-template-columns: 1fr; }
+  }
+
+  .about-columns p{ color: var(--muted); margin: 0 0 1rem; }
+  .about-columns p:last-child{ margin-bottom: 0; }
+
+  .terminal{
+    border: 1px solid var(--line);
+    background: var(--panel);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    overflow: hidden;
+  }
+
+  .terminal-bar{
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .terminal-bar span{
+    width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--line);
+  }
+
+  .terminal pre{
+    margin: 0;
+    padding: 1.1rem 1.2rem;
+    line-height: 1.7;
+    color: var(--muted);
+    overflow-x: auto;
+  }
+
+  .terminal .kw{ color: var(--teal); }
+  .terminal .str{ color: var(--gold); }
+  .terminal .cm{ color: #6b7280; }
 
   @media (max-width: 640px){
     .about-grid{
@@ -428,6 +528,33 @@
   .cert-body p{ margin: 0 0 0.5rem; color: var(--muted); font-size: 0.85rem; }
   .cert-meta{ font-family: 'IBM Plex Mono', monospace; font-size: 0.76rem; color: var(--gold); }
 
+  .training-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1.5rem;
+  }
+
+  .training-card{
+    border: 1px solid var(--line);
+    background: var(--panel);
+    padding: 1.35rem 1.5rem;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .training-card:hover{ border-color: var(--teal); transform: translateY(-2px); }
+
+  .training-card .training-meta{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  .training-card h3{ font-size: 1.02rem; margin-bottom: 0.6rem; }
+  .training-card p{ margin: 0 0 0.9rem; color: var(--muted); font-size: 0.9rem; }
+
   /* ---------- achievements ---------- */
 
   .achievement{
@@ -655,8 +782,10 @@
     <div class="brand">Hemantha</div>
     <nav>
       <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#training">Training</a>
       <a href="#certifications">Certifications</a>
       <a href="#achievements">Achievements</a>
       <a href="#resume">Resume</a>
@@ -673,7 +802,7 @@
       </div>
     </div>
     <div class="about-text">
-      <div class="badge">Open to Software Engineering &amp; Data Science opportunities</div>
+      <div class="badge"><span class="dot"></span>Open to Opportunities</div>
       <h1>Hemantha Valathuru</h1>
       <div class="role-line"><span id="role-text"></span><span class="cursor">&nbsp;</span></div>
       <p>B.Tech Computer Science student specializing in Data Science and Machine Learning. I'm drawn to working with data to uncover insights and build intelligent systems — with hands-on experience across data analysis, machine learning, LLMs, RAG, and Agentic AI. I like using technology to solve real problems.</p>
@@ -683,6 +812,30 @@
         <a class="btn ghost" href="https://www.linkedin.com/in/hemantha-valathuru/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn ghost" href="assets/resume/Hemantha_Valathuru_Resume.pdf" download>Download Resume</a>
       </div>
+    </div>
+  </div>
+  <div class="stat-bar">
+    <div class="stat"><div class="num">4+</div><div class="label">Projects Built</div></div>
+    <div class="stat"><div class="num">8.02</div><div class="label">Current CGPA</div></div>
+    <div class="stat"><div class="num">9</div><div class="label">Certifications</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-columns">
+    <div>
+      <h2>About</h2>
+      <p>I'm a B.Tech Computer Science student at Lovely Professional University, specializing in Data Science and Machine Learning. My work spans exploratory data analysis, ML modeling, and building AI-powered tools — from testing whether "buzzword" tech skills actually pay more in the Indian job market, to shipping a RAG-based assistant that lets developers query GitHub repositories in plain English.</p>
+      <p>I like projects that combine data with a real, testable question — clean the data, engineer the features that matter, build the model, and show the result clearly. Outside coursework, I'm building toward roles in data science and software engineering, with hands-on exposure to LLMs, RAG pipelines, and Agentic AI.</p>
+    </div>
+    <div class="terminal">
+      <div class="terminal-bar"><span></span><span></span><span></span>&nbsp;hemantha@ds — profile.py</div>
+      <pre><span class="kw">class</span> Hemantha:
+    degree = <span class="str">"B.Tech CSE (Data Science & ML)"</span>
+    university = <span class="str">"Lovely Professional University"</span>
+    cgpa = 8.02
+    focus = [<span class="str">"EDA"</span>, <span class="str">"ML"</span>, <span class="str">"RAG"</span>, <span class="str">"Agentic AI"</span>]
+    <span class="cm"># always shipping, never just notebooks</span></pre>
     </div>
   </div>
 </section>
@@ -899,6 +1052,33 @@
     <div class="achievement">
       <span class="year">2024</span>
       <p><strong>Top 30 finish, CodeXtreme 2.0 — Neo Codeathon</strong> — a coding competition held at Lovely Professional University.</p>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="wrap">
+    <h2>Training</h2>
+    <div class="training-grid">
+
+      <div class="training-card">
+        <div class="training-meta">Semester Training</div>
+        <h3>LLM &amp; Agentic AI Training — CodebaseQ&amp;A</h3>
+        <p>Built a RAG-based assistant that answers natural-language questions about GitHub codebases, working with a partner. Owned the frontend, repo-cloning workflow, and chunking pipeline; used GitPython, HuggingFace sentence-transformers, FAISS, and Groq's Llama 3.3 70B.</p>
+        <div class="chip-row">
+          <span class="chip">RAG</span><span class="chip">FAISS</span><span class="chip">Groq Llama 3.3</span>
+        </div>
+      </div>
+
+      <div class="training-card">
+        <div class="training-meta">upGrad</div>
+        <h3>Data Structures, Java &amp; Python Project</h3>
+        <p>Certified coursework covering core data structures, programming in Java, and a hands-on Python project.</p>
+        <div class="chip-row">
+          <span class="chip">Data Structures</span><span class="chip">Java</span><span class="chip">Python</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
